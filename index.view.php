@@ -28,6 +28,7 @@
             </ul>
             <button onclick="loadDoc()">Click me</button>
           </div>
+          <a id="myAnchor" href="http://www.stackoverflow.com">StackOverflow</a>
         </nav>
     
 
@@ -39,6 +40,10 @@
         <script>
 
             function loadDoc() {
+                var myAnchor = document.getElementById("myAnchor");
+                  var mySpan = document.createElement("span");
+                  mySpan.innerHTML = "replaced anchor!";
+                  myAnchor.parentNode.replaceChild(mySpan, myAnchor);
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
